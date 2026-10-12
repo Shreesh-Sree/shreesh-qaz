@@ -1,4 +1,53 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Odd or Even</title><style>body{font-family:Arial,sans-serif;max-width:850px;margin:35px auto;padding:15px;background:#f1f7ff;color:#223}button{padding:9px 15px;cursor:pointer;margin:5px}input,select{padding:8px;margin:5px}section{background:white;padding:20px;border-radius:8px;margin:15px 0}</style></head>
-<body><h1>Odd or Even</h1><input type="number" id="num" step="1"><button onclick="check()">Check</button><p id="result"></p><script>function check(){const raw=num.value,n=Number(raw);result.textContent=!raw||!Number.isInteger(n)?"Enter a valid integer":n%2===0?"Even Number":"Odd Number"}</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Odd or Even</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 850px;
+        margin: 35px auto;
+        padding: 15px;
+        background: #f1f7ff;
+        color: #223;
+      }
+      button {
+        padding: 9px 15px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      input,
+      select {
+        padding: 8px;
+        margin: 5px;
+      }
+      section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Odd or Even</h1>
+    <input type="number" id="num" step="1" /><button onclick="check()">
+      Check
+    </button>
+    <p id="result"></p>
+    <script>
+      function check() {
+        const raw = num.value,
+          n = Number(raw);
+        result.textContent =
+          !raw || !Number.isInteger(n)
+            ? "Enter a valid integer"
+            : n % 2 === 0
+              ? "Even Number"
+              : "Odd Number";
+      }
+    </script>
+  </body>
+</html>

@@ -1,4 +1,66 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Automatic Image Slider</title><style>body{font-family:Arial,sans-serif;max-width:850px;margin:35px auto;padding:15px;background:#f1f7ff;color:#223}button{padding:9px 15px;cursor:pointer;margin:5px}input,select{padding:8px;margin:5px}section{background:white;padding:20px;border-radius:8px;margin:15px 0}img{width:min(100%,550px);height:300px;object-fit:cover;border:3px solid #333;border-radius:8px}</style></head>
-<body><h1>Automatic Image Slider</h1><section><img id="slide" alt="Automatically changing image"><p id="count"></p></section><script>const images=['https://picsum.photos/id/10/700/400','https://picsum.photos/id/29/700/400','https://picsum.photos/id/1018/700/400'];let index=0;function show(){document.getElementById("slide").src=images[index];document.getElementById("count").textContent=`Slide ${index+1} of ${images.length}`;}show();setInterval(()=>{index=(index+1)%images.length;show()},2000);</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Automatic Image Slider</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 850px;
+        margin: 35px auto;
+        padding: 15px;
+        background: #f1f7ff;
+        color: #223;
+      }
+      button {
+        padding: 9px 15px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      input,
+      select {
+        padding: 8px;
+        margin: 5px;
+      }
+      section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+      img {
+        width: min(100%, 550px);
+        height: 300px;
+        object-fit: cover;
+        border: 3px solid #333;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Automatic Image Slider</h1>
+    <section>
+      <img id="slide" alt="Automatically changing image" />
+      <p id="count"></p>
+    </section>
+    <script>
+      const images = [
+        "https://picsum.photos/id/10/700/400",
+        "https://picsum.photos/id/29/700/400",
+        "https://picsum.photos/id/1018/700/400",
+      ];
+      let index = 0;
+      function show() {
+        document.getElementById("slide").src = images[index];
+        document.getElementById("count").textContent =
+          `Slide ${index + 1} of ${images.length}`;
+      }
+      show();
+      setInterval(() => {
+        index = (index + 1) % images.length;
+        show();
+      }, 2000);
+    </script>
+  </body>
+</html>

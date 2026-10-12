@@ -1,1 +1,65 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Styled Form</title><link rel="stylesheet" href="a-style.css"><style>h2{color:darkblue;text-align:center}input[type=text],input[type=email]{width:90%;padding:10px;margin:10px 0;border:2px solid blue;border-radius:5px}input[type=radio],input[type=checkbox]{accent-color:blue}button{background:blue;color:white;padding:10px 20px;border:0;border-radius:5px;cursor:pointer}button:hover{background:darkblue}</style></head><body><div class="form-box"><h2>Student Registration</h2><form onsubmit="event.preventDefault();alert('Form Submitted Successfully!')"><label>Name:</label><br><input type="text" required placeholder="Enter name"><br><label>Email:</label><br><input type="email" required placeholder="Enter email"><br><label>Gender:</label><br><label><input type="radio" name="gender" required>Male</label><label><input type="radio" name="gender">Female</label><p>Skills:</p><label><input type="checkbox">HTML</label><label><input type="checkbox">CSS</label><label><input type="checkbox">JavaScript</label><p><button>Submit</button></p></form></div></body></html>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Styled Form</title>
+    <link rel="stylesheet" href="a-style.css" />
+    <style>
+      h2 {
+        color: darkblue;
+        text-align: center;
+      }
+      input[type="text"],
+      input[type="email"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 2px solid blue;
+        border-radius: 5px;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        accent-color: blue;
+      }
+      button {
+        background: blue;
+        color: white;
+        padding: 10px 20px;
+        border: 0;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-box">
+      <h2>Student Registration</h2>
+      <form
+        onsubmit="
+          event.preventDefault();
+          alert('Form Submitted Successfully!');
+        "
+      >
+        <label>Name:</label><br /><input
+          type="text"
+          required
+          placeholder="Enter name"
+        /><br /><label>Email:</label><br /><input
+          type="email"
+          required
+          placeholder="Enter email"
+        /><br /><label>Gender:</label><br /><label
+          ><input type="radio" name="gender" required />Male</label
+        ><label><input type="radio" name="gender" />Female</label>
+        <p>Skills:</p>
+        <label><input type="checkbox" />HTML</label
+        ><label><input type="checkbox" />CSS</label
+        ><label><input type="checkbox" />JavaScript</label>
+        <p><button>Submit</button></p>
+      </form>
+    </div>
+  </body>
+</html>

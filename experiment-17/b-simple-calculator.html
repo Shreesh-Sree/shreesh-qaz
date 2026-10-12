@@ -1,4 +1,67 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Simple Calculator</title><style>body{font-family:Arial,sans-serif;max-width:850px;margin:35px auto;padding:15px;background:#f1f7ff;color:#223}button{padding:9px 15px;cursor:pointer;margin:5px}input,select{padding:8px;margin:5px}section{background:white;padding:20px;border-radius:8px;margin:15px 0}</style></head>
-<body><h1>Simple Calculator</h1><input id="a" type="number" placeholder="First number"><input id="b" type="number" placeholder="Second number"><p><button onclick="calc('+')">+</button><button onclick="calc('-')">-</button><button onclick="calc('*')">×</button><button onclick="calc('/')">÷</button></p><p id="out"></p><script>function calc(op){if(a.value===""||b.value===""){out.textContent="Enter both numbers";return}const x=Number(a.value),y=Number(b.value);out.textContent="Result: "+({"+":x+y,"-":x-y,"*":x*y,"/":y?x/y:"Cannot divide by zero"})[op]}</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Simple Calculator</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 850px;
+        margin: 35px auto;
+        padding: 15px;
+        background: #f1f7ff;
+        color: #223;
+      }
+      button {
+        padding: 9px 15px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      input,
+      select {
+        padding: 8px;
+        margin: 5px;
+      }
+      section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Calculator</h1>
+    <input id="a" type="number" placeholder="First number" /><input
+      id="b"
+      type="number"
+      placeholder="Second number"
+    />
+    <p>
+      <button onclick="calc('+')">+</button
+      ><button onclick="calc('-')">-</button
+      ><button onclick="calc('*')">×</button
+      ><button onclick="calc('/')">÷</button>
+    </p>
+    <p id="out"></p>
+    <script>
+      function calc(op) {
+        if (a.value === "" || b.value === "") {
+          out.textContent = "Enter both numbers";
+          return;
+        }
+        const x = Number(a.value),
+          y = Number(b.value);
+        out.textContent =
+          "Result: " +
+          {
+            "+": x + y,
+            "-": x - y,
+            "*": x * y,
+            "/": y ? x / y : "Cannot divide by zero",
+          }[op];
+      }
+    </script>
+  </body>
+</html>

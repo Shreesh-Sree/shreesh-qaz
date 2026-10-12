@@ -1,5 +1,46 @@
 // Run: npm install mysql2 && node b-app.js
-const mysql=require('mysql2/promise');const readline=require('readline');
-const rl=readline.createInterface({input:process.stdin,output:process.stdout});
-const ask=q=>new Promise(resolve=>rl.question(q,resolve));
-async function main(){let db;try{db=await mysql.createConnection({host:'localhost',user:process.env.DB_USER||'root',password:process.env.DB_PASSWORD||'',database:'supermarket'});console.log('ONLINE SUPERMARKET');console.log('1. Search by ID\n2. Search by name');const choice=await ask('Choice: ');if(!['1','2'].includes(choice)){console.log('Invalid choice');return;}const value=await ask('Search value: ');if(choice==='1'&&!/^\d+$/.test(value.trim())){console.log('Enter a numeric ID');return;}const sql=choice==='1'?'SELECT * FROM products WHERE id = ?':'SELECT * FROM products WHERE name LIKE ?';const [rows]=await db.execute(sql,[choice==='1'?Number(value):`%${value}%`]);console.table(rows);if(!rows.length)console.log('Product not found');}catch(err){console.error('Database error:',err.message)}finally{if(db)await db.end();rl.close()}}main();
+const mysql = require("mysql2/promise");
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+const ask = (q) => new Promise((resolve) => rl.question(q, resolve));
+async function main() {
+  let db;
+  try {
+    db = await mysql.createConnection({
+      host: "localhost",
+      user: process.env.DB_USER || "root",
+      password: process.env.DB_PASSWORD || "",
+      database: "supermarket",
+    });
+    console.log("ONLINE SUPERMARKET");
+    console.log("1. Search by ID\n2. Search by name");
+    const choice = await ask("Choice: ");
+    if (!["1", "2"].includes(choice)) {
+      console.log("Invalid choice");
+      return;
+    }
+    const value = await ask("Search value: ");
+    if (choice === "1" && !/^\d+$/.test(value.trim())) {
+      console.log("Enter a numeric ID");
+      return;
+    }
+    const sql =
+      choice === "1"
+        ? "SELECT * FROM products WHERE id = ?"
+        : "SELECT * FROM products WHERE name LIKE ?";
+    const [rows] = await db.execute(sql, [
+      choice === "1" ? Number(value) : `%${value}%`,
+    ]);
+    console.table(rows);
+    if (!rows.length) console.log("Product not found");
+  } catch (err) {
+    console.error("Database error:", err.message);
+  } finally {
+    if (db) await db.end();
+    rl.close();
+  }
+}
+main();

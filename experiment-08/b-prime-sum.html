@@ -1,4 +1,59 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sum of Prime Numbers</title><style>body{font-family:Arial,sans-serif;max-width:850px;margin:35px auto;padding:15px;background:#f1f7ff;color:#223}button{padding:9px 15px;cursor:pointer;margin:5px}input,select{padding:8px;margin:5px}section{background:white;padding:20px;border-radius:8px;margin:15px 0}</style></head>
-<body><h1>Sum of Prime Numbers</h1><label>Enter limit <input id="limit" type="number" min="2" step="1"></label><button onclick="calculate()">Calculate</button><p id="out"></p><script>function prime(n){if(n<2)return false;for(let i=2;i*i<=n;i++)if(n%i===0)return false;return true}function calculate(){const raw=document.getElementById("limit").value,n=Number(raw);if(!raw||!Number.isInteger(n)||n<2){out.textContent="Enter a valid integer >= 2";return}let sum=0;for(let i=2;i<=n;i++)if(prime(i))sum+=i;document.getElementById("out").textContent="Sum of primes = "+sum}</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Sum of Prime Numbers</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 850px;
+        margin: 35px auto;
+        padding: 15px;
+        background: #f1f7ff;
+        color: #223;
+      }
+      button {
+        padding: 9px 15px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      input,
+      select {
+        padding: 8px;
+        margin: 5px;
+      }
+      section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sum of Prime Numbers</h1>
+    <label
+      >Enter limit <input id="limit" type="number" min="2" step="1" /></label
+    ><button onclick="calculate()">Calculate</button>
+    <p id="out"></p>
+    <script>
+      function prime(n) {
+        if (n < 2) return false;
+        for (let i = 2; i * i <= n; i++) if (n % i === 0) return false;
+        return true;
+      }
+      function calculate() {
+        const raw = document.getElementById("limit").value,
+          n = Number(raw);
+        if (!raw || !Number.isInteger(n) || n < 2) {
+          out.textContent = "Enter a valid integer >= 2";
+          return;
+        }
+        let sum = 0;
+        for (let i = 2; i <= n; i++) if (prime(i)) sum += i;
+        document.getElementById("out").textContent = "Sum of primes = " + sum;
+      }
+    </script>
+  </body>
+</html>

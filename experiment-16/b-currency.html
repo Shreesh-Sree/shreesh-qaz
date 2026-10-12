@@ -1,4 +1,70 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Currency Converter (Demo Rates)</title><style>body{font-family:Arial,sans-serif;max-width:850px;margin:35px auto;padding:15px;background:#f1f7ff;color:#223}button{padding:9px 15px;cursor:pointer;margin:5px}input,select{padding:8px;margin:5px}section{background:white;padding:20px;border-radius:8px;margin:15px 0}</style></head>
-<body><h1>Currency Converter (Demo Rates)</h1><section><label>Amount <input id="amount" type="number" min="0"></label><label>From <select id="from"><option>USD</option><option>INR</option><option>EUR</option></select></label><label>To <select id="to"><option>INR</option><option>USD</option><option>EUR</option></select></label><button onclick="convert()">Convert</button><p id="result"></p><small>Demonstration rates only: USD=1, INR=83, EUR=0.92; not live.</small></section><script>function convert(){const rates={USD:1,INR:83,EUR:.92},raw=amount.value,value=Number(raw);result.textContent=raw===""||!Number.isFinite(value)||value<0?"Enter a valid amount":`Converted Amount: ${(value/rates[from.value]*rates[to.value]).toFixed(2)} ${to.value}`}</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Currency Converter (Demo Rates)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 850px;
+        margin: 35px auto;
+        padding: 15px;
+        background: #f1f7ff;
+        color: #223;
+      }
+      button {
+        padding: 9px 15px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      input,
+      select {
+        padding: 8px;
+        margin: 5px;
+      }
+      section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Currency Converter (Demo Rates)</h1>
+    <section>
+      <label>Amount <input id="amount" type="number" min="0" /></label
+      ><label
+        >From
+        <select id="from">
+          <option>USD</option>
+          <option>INR</option>
+          <option>EUR</option>
+        </select></label
+      ><label
+        >To
+        <select id="to">
+          <option>INR</option>
+          <option>USD</option>
+          <option>EUR</option>
+        </select></label
+      ><button onclick="convert()">Convert</button>
+      <p id="result"></p>
+      <small
+        >Demonstration rates only: USD=1, INR=83, EUR=0.92; not live.</small
+      >
+    </section>
+    <script>
+      function convert() {
+        const rates = { USD: 1, INR: 83, EUR: 0.92 },
+          raw = amount.value,
+          value = Number(raw);
+        result.textContent =
+          raw === "" || !Number.isFinite(value) || value < 0
+            ? "Enter a valid amount"
+            : `Converted Amount: ${((value / rates[from.value]) * rates[to.value]).toFixed(2)} ${to.value}`;
+      }
+    </script>
+  </body>
+</html>

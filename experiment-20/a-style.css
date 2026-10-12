@@ -1,1 +1,22 @@
-body{font-family:Arial;background:lightblue;margin:30px}.form-box{background:white;width:350px;max-width:100%;padding:25px;margin:40px auto;border:2px solid blue;border-radius:10px;box-sizing:border-box}label{color:darkgreen;font-weight:bold}form{line-height:1.8}
+body {
+  font-family: Arial;
+  background: lightblue;
+  margin: 30px;
+}
+.form-box {
+  background: white;
+  width: 350px;
+  max-width: 100%;
+  padding: 25px;
+  margin: 40px auto;
+  border: 2px solid blue;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+label {
+  color: darkgreen;
+  font-weight: bold;
+}
+form {
+  line-height: 1.8;
+}
