@@ -1,0 +1,4 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Digital Clock</title><style>body{font-family:Arial,sans-serif;max-width:850px;margin:35px auto;padding:15px;background:#f1f7ff;color:#223}button{padding:9px 15px;cursor:pointer;margin:5px}input,select{padding:8px;margin:5px}section{background:white;padding:20px;border-radius:8px;margin:15px 0}#clock{font-size:42px;background:#111;color:white;display:inline-block;padding:20px;border-radius:8px}</style></head>
+<body><h1>Digital Clock</h1><section><div id="clock"></div></section><script>function tick(){const d=new Date();document.getElementById("clock").textContent=d.toLocaleTimeString("en-GB");}tick();setInterval(tick,1000);</script></body></html>
